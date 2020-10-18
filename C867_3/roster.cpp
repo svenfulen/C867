@@ -9,12 +9,15 @@
 #include "degree.h"
 
 //Roster constructor
+//makes the array of pointers
+//each pointer in the array points to a Student object
 Roster::Roster() { classRosterArray = new Student * [5]; };
 
 //Roster destructor
 Roster::~Roster() { delete[] classRosterArray; };
 
 //prints string version of degreeprogram value (using cout)
+//int dp is a placeholder for the number version of the enum DegreeProgram
 void Roster::printDegreeString(int dp) {
 	switch (dp) {
 	case 0:
@@ -32,6 +35,8 @@ void Roster::printDegreeString(int dp) {
 	}
 }
 
+//index is a parameter for which index of classRosterArray to add the student to
+//paramaters a - h and x are for variable data to be added to a Student object
 void Roster::addStudent(int index, std::string a, std::string b, std::string c, std::string d, std::string e, int f, int g, int h, DegreeProgram x) {
 	//converts the int index into a constant so it can be used for index parameter
 	const int indexConst = index;
@@ -51,6 +56,8 @@ void Roster::addStudent(int index, std::string a, std::string b, std::string c, 
 	classRosterArray[indexConst] = xstudent;
 }
 
+//removeStudent sets every var in a Student object to blank
+//also sets studentID to NUL so that print functions won't print it
 void Roster::removeStudent(std::string stID) {
 	//did the function find the student?
 	bool indexFound = false;
@@ -122,7 +129,7 @@ void Roster::parseArray(int rosterIndex) {
 
 	//grabs string from studentData to parse
 	std::string studentDataString = studentData[rosterIndex];
-	//makes length more accessible
+	//makes length of the given string more accessible / readable
 	int stringLength = studentDataString.length();
 
 	//these variables hold data values that is parsed by the function
@@ -144,13 +151,14 @@ void Roster::parseArray(int rosterIndex) {
 		LOGIC TO PARSE DATA INTO VARIABLES
 	*/
 
-	//char # in parsing loop
+	//char # in parsing loop (what character of this string are we parsing?)
 	int i = 0;
 
 	//when commasSkipped increments, input goes to the next variable on the list
+	//in order studentID, firstName, lastName, etc...
 	int commasSkipped = 0;
 
-	//parses string char by char and converts them into string variables
+	//parses string one char at a time and adds the chars to each string variable
 	for (i = 0; i < stringLength; i++) {
 		char s = studentDataString.at(i);
 		if (s != ',') {
@@ -197,7 +205,7 @@ void Roster::parseArray(int rosterIndex) {
 		TYPE CONVERSION
 	*/
 
-	//converting stringdata to int data that can be passed
+	//converting string data to int data that can be passed into a Student object
 	std::stringstream daysConvert0(stringdays0);
 	std::stringstream daysConvert1(stringdays1);
 	std::stringstream daysConvert2(stringdays2);
@@ -225,6 +233,7 @@ void Roster::parseArray(int rosterIndex) {
 	addStudent(rosterIndex, studentID, firstName, lastName, email, age, days0, days1, days2, studentDegree);
 }
 
+//printAll prints all 5 of the student vars in a list, calling the print() function
 void Roster::printAll() {
 	for (int i = 0; i < 5; i++) {
 		//checks if student exists or not before trying to print data
@@ -257,6 +266,8 @@ void Roster::printAll() {
 std::cout << std::endl;
 }
 
+//printAverageDaysInCourse searches for the studentID in the roster
+//then it averages the daysincourse array vals if the studentID is found
 void Roster::printAverageDaysInCourse(std::string stID) {
 	int average;
 	int daysA;
@@ -303,6 +314,9 @@ void Roster::printAverageDaysInCourse(std::string stID) {
 	}
 }
 
+//printInvalidEmails has basic logic that will find which emails are invalid
+//based on if they have an @ symbol and a .
+//and if the string does not contain a space
 void Roster::printInvalidEmails() {
 	std::cout << "Printing invalid emails: " << std::endl;
 

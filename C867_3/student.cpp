@@ -6,7 +6,7 @@
 
 //D2. Student constructor
 Student::Student() { 
-    this->studentID = "";
+    this->studentID = ""; //Set to blank, if it's set to NUL the Student won't be output by print() function
     this->firstName = "";
     this->lastName = "";
     this->emailAddress = "";
@@ -30,6 +30,7 @@ int Student::getDays(int atArray) { return daysInCourse[atArray]; }
 DegreeProgram Student::getDegreeProgram() { return degreeProgram; }
 
 //SETTERS
+//takes in a parameter and changes the var value to that parameter value
 void Student::setID(std::string studentID) { this->studentID = studentID; }
 void Student::setFirstName(std::string firstName) { this->firstName = firstName; }
 void Student::setLastName(std::string lastName) { this->lastName = lastName; }
