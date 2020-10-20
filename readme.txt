@@ -1,7 +1,10 @@
 This is my full project for WGU course C867.
 
-10/19/2020
-For context, I have added a file that describes the requirements of this project. See project.txt
+This application is built around parsing and manipulating data from an input string, and storing them in objects.  There are 2 classes in the project.
+
+The Roster class includes functions to manipulate, parse, and store data.
+  
+
 
 10/18/2020
 I haven't found anywhere that says I cannot share my work, so I'm putting it on here to help other students structure their code.
