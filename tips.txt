@@ -1,0 +1,13 @@
+If you don't know where to start with this project, just start coding the Student class first.  It is the easiest part of the project to put together.
+
+I copied the project requirements into a Word document, and cut out the parts that I didn't need to figure out what I needed to code.
+
+Write your classes in pseudo-code first, so you understand exactly what you're trying to do before writing the function.
+
+It helps a lot to collaborate with others when trying to figure out difficult problems.  Try to connect with someone that is working on the same project.
+(Thank you to Pi for helping me fix my code)
+
+If you know how to use Git, definitely use it for version control.  If you completely mess up all your code, you can just roll back to the previous version.
+
+As a beginner, this program was really hard to write, and it took me about a month of learning C++ concepts and 2 weeks of coding to finish.
+When you finish this project, you'll have a really good understanding of programming concepts, and you'll be better at coding.
